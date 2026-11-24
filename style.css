@@ -1,0 +1,180 @@
+/* 試しに、見出しの色を変えてみる */
+.photo {
+    width: 160px;
+}
+
+h3 {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    font-size: 24px;
+    line-height: 1.8;
+}
+li{font-size: 16px;}
+p.red {
+    color:#2c5282;
+}
+
+ul {
+    color: #2c5282;
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: linear-gradient(rgb(243, 247, 250), rgb(152, 201, 232));
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+body {
+    margin: 20px;
+    border: 10px solid rgb(8, 56, 153);
+    padding: 50px;
+    border-radius: 12px;
+    /* 角の丸み */
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+/* 趣味のリストだけカードにする */
+.box-list li {
+    background-color: #d3e9fc;
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 3px solid rgb(8, 56, 153);
+    border-radius: 12px;
+    box-shadow: 3px 3px 6px rgb(181, 199, 235);
+    display: flex;
+    justify-content: center;
+}
+
+.photo {
+    margin: 10px;
+    border: 3px solid rgb(8, 56, 153);
+    width: 160px;
+    border-radius: 100px;
+    /* 角の丸み */
+}
+
+h1 {
+    color: #2c5282;
+    font-size: 28px;
+
+}
+
+h2 {
+    color: #2c5282;
+    font-size: 20px;
+    margin-top: 20;
+    padding-bottom: 8px;
+    border-bottom: 3px solid rgb(8, 56, 153);
+}
+
+h1 {
+    background-color: #2c5282;
+    color: #ffffff;
+    padding: 32px 16px;
+    text-align: center;
+}
+
+h3 {
+    color: #2c5282;
+    font-size: 24px;
+    margin-top: 20;
+    padding-bottom: 8px;
+    border-bottom: 3px solid rgb(8, 56, 153);
+}
+
+a {
+    color: #2c5282;
+}
+
+body{color: #2c5282;}
+
+
+/* メインとプロフィールを横並びにする */
+.layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* 左側：メインコンテンツ */
+.content {
+    flex: 3;
+    min-width: 0;
+}
+
+/* 右側：プロフィール欄 */
+.side {
+    flex: 1;
+}
+
+/* ===== ナビゲーション ===== */
+/* ヘッダーを横並びにする */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2c5282;
+    padding: 20px 30px;
+    border-radius: 0px;
+    gap: 12px;
+
+    margin-bottom: 24px;
+}
+
+/* タイトルの余白を調整 */
+header h1 { background-color: transparent;
+    color: #ffffff;
+    font-size: 28px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* ナビゲーション */
+header {
+    align-items: stretch;
+}
+.nav-menu {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 15px;
+}
+
+/* リンク */
+.nav-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-menu a:hover {
+    color: #c9e1f6;
+}
+/* 4つのセクションをボックスで囲む */
+.content section,
+.side section {
+    background-color: rgba(232, 243, 253, 0.998);
+    border: 3px solid rgb(8, 56, 153);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 3px 3px 6px rgb(111, 144, 209);
+}
+
+/* ボックス内の見出し */
+.content section h2,
+.side section h2 {
+    margin-top: 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgb(8, 56, 153);
+}

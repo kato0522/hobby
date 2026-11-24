@@ -1,0 +1,834 @@
+
+/* ============================================================
+   tamagoiro | Egg Tart Bakery
+   ============================================================ */
+
+/* ---- 1. 色 ---- */
+/* サイト全体で使う色の名前をまとめています。 */
+:root {
+  --base: #faf6ef;
+  --base-sub: #eee3d4;
+  --main: #8b6248;
+  --accent: #c58b55;
+  --text: #40352d;
+}
+
+/* ---- 余白 ---- */
+/* サイト全体で使う余白の大きさをまとめています。 */
+:root {
+  --s1: .5rem;
+  --s2: 1rem;
+  --s3: 1.5rem;
+  --s4: 3rem;
+  --s5: 5rem;
+}
+
+/* ---- 2. 全体 ---- */
+/* ページ全体に共通の基本設定を指定します。 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* ページ全体の文字と背景の見た目を指定します。 */
+body {
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN",
+    "Meiryo", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text);
+  background-color: var(--base);
+}
+
+/* 写真の大きさと切り取り方をそろえます。 */
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---- 3. 中身の幅 ---- */
+/* 表示する内容の横幅と中央位置を指定します。 */
+.inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* 上部ヘッダーと本文、下部の左右に余白をつけます。 */
+.site-header,
+main > section,
+footer {
+  padding-left: var(--s3);
+  padding-right: var(--s3);
+}
+
+/* ---- 4. ヘッダー ---- */
+/* ページ上部のヘッダー部分を装飾します。 */
+.site-header {
+  padding-top: var(--s2);
+  padding-bottom: var(--s2);
+  border-bottom: 1px solid var(--base-sub);
+  background-color: var(--base);
+}
+
+/* ヘッダー内の並び方と間隔を指定します。 */
+.site-header .inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s1) var(--s3);
+}
+
+/* 店名ロゴの文字と見た目を指定します。 */
+.logo {
+  color: var(--main);
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* メニュー項目を横並びにします。 */
+.site-header nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s3);
+}
+
+/* メニューの文字リンクの見た目を指定します。 */
+.site-header nav a {
+  color: var(--text);
+  font-family: Georgia, serif;
+  font-size: .85rem;
+  letter-spacing: .1em;
+  text-decoration: none;
+}
+
+/* マウスをメニュー文字の上に乗せたときの見た目です。 */
+.site-header nav a:hover {
+  color: var(--main);
+  text-decoration: underline;
+}
+
+/* ---- 5. 最初の画面 ---- */
+/* ページ上部の見出し部分全体を装飾します。 */
+.hero {
+  background-color: #eee2d2;
+  color: #503b2c;
+  padding-top: var(--s4);
+  padding-bottom: var(--s4);
+}
+
+/* 上部の文字と写真を横並びに配置します。 */
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--s4);
+}
+
+/* 上部の文字部分に余白をつけます。 */
+.hero-content {
+  padding: var(--s2) 0;
+}
+
+/* 上部の小見出しを装飾します。 */
+.hero-sub {
+  font-family: Georgia, serif;
+  letter-spacing: .18em;
+  font-size: .8rem;
+  margin-bottom: var(--s2);
+  color: #956b4d;
+}
+
+/* 上部の大見出しの大きさと間隔を指定します。 */
+.hero h1 {
+  font-size: 2rem;
+  line-height: 1.5;
+  margin-bottom: var(--s2);
+}
+
+/* 上部の説明文の下に余白をつけます。 */
+.hero p {
+  margin-bottom: var(--s3);
+}
+
+/* 上部の写真の高さと角の形を指定します。 */
+.hero-photo {
+  height: 350px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+/* メニューへ移動するボタンを装飾します。 */
+.btn {
+  display: inline-block;
+  background-color: var(--main);
+  color: #ffffff;
+  font-weight: 700;
+  padding: .8rem 2rem;
+  border-radius: 3px;
+  text-decoration: none;
+  letter-spacing: .1em;
+  transition: background-color .3s, transform .3s;
+}
+
+/* マウスをボタンの上に乗せたときの変化を指定します。 */
+.btn:hover {
+  background-color: #68462f;
+  transform: translateY(-3px);
+}
+
+/* ---- 6. メニュー ---- */
+/* メニュー、紹介、店舗情報の上下に余白をつけます。 */
+.features,
+.story,
+.info {
+  padding-top: var(--s4);
+  padding-bottom: var(--s4);
+}
+
+/* 各部分の小見出しを装飾します。 */
+.section-sub {
+  color: var(--accent);
+  font-family: Georgia, serif;
+  font-size: .8rem;
+  letter-spacing: .2em;
+  margin-bottom: .3rem;
+}
+
+/* 各部分の大見出しをそろえて装飾します。 */
+.features h2,
+.story h2,
+.info h2 {
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  color: var(--main);
+  margin-bottom: var(--s2);
+}
+
+/* メニューの説明文の下に余白をつけます。 */
+.section-intro {
+  margin-bottom: var(--s3);
+}
+
+/* 商品カードを横に並べます。 */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s3);
+}
+
+/* 商品カードの背景と枠を装飾します。 */
+.card {
+  background-color: #fffdf9;
+  border: 1px solid var(--base-sub);
+  border-radius: 4px;
+  padding: var(--s2);
+}
+
+/* 商品写真の高さや枠を指定します。 */
+.menu-photo {
+  height: 190px;
+  overflow: hidden;
+  margin-bottom: var(--s2);
+  background-color: #e7d4bd;
+}
+
+/* 商品写真の動きを滑らかにする設定です。 */
+.menu-photo img {
+  transition: transform .3s;
+}
+
+/* 商品カードにマウスを乗せたとき写真を少し拡大します。 */
+.card:hover .menu-photo img {
+  transform: scale(1.04);
+}
+
+/* 商品名の文字を装飾します。 */
+.card h3 {
+  color: var(--main);
+  margin-bottom: var(--s1);
+  font-family: Georgia, serif;
+}
+
+/* 商品説明の文字を小さくします。 */
+.card p {
+  font-size: .9rem;
+}
+
+/* 商品の値段を右寄せで強調します。 */
+.price {
+  display: block;
+  color: var(--main);
+  font-weight: 700;
+  margin-top: var(--s2);
+  text-align: right;
+}
+
+/* 写真がない商品の仮表示 */
+/* 写真がない商品に共通の中央表示を指定します。 */
+.chocolate-photo,
+.seasonal-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fffaf2;
+  font-family: Georgia, serif;
+  letter-spacing: .15em;
+  font-size: 1.1rem;
+}
+
+/* チョコレート商品の仮の背景色を指定します。 */
+.chocolate-photo {
+  background: linear-gradient(135deg, #9b7157, #503b2c);
+}
+
+/* 季節限定商品の仮の背景色を指定します。 */
+.seasonal-photo {
+  background: linear-gradient(135deg, #d8b28a, #a16d50);
+}
+
+/* ---- 7. お店の紹介 ---- */
+/* 店舗紹介部分の背景色を指定します。 */
+.story {
+  background-color: var(--base-sub);
+}
+
+/* 店舗紹介の写真と文章を横並びに配置します。 */
+.story-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--s4);
+}
+
+/* 店舗紹介の写真の高さと角の形を指定します。 */
+.story-image {
+  height: 330px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+/* 店舗紹介の文章に幅と余白を指定します。 */
+.story-content p {
+  max-width: 36em;
+  margin-bottom: var(--s2);
+}
+
+/* ---- 8. 店舗情報 ---- */
+/* 店舗情報を項目名と内容の表形式にします。 */
+.info dl {
+  display: grid;
+  grid-template-columns: 8em 1fr;
+  gap: var(--s2);
+  margin-top: var(--s3);
+}
+
+/* 店舗情報の項目名を装飾します。 */
+.info dt {
+  font-family: Georgia, serif;
+  font-weight: 700;
+  color: var(--main);
+}
+
+/* ---- 9. フッター ---- */
+/* ページ下部の背景と文字を装飾します。 */
+footer {
+  background-color: #503b2c;
+  color: var(--base);
+  font-size: .85rem;
+  padding-top: var(--s3);
+  padding-bottom: var(--s3);
+  text-align: center;
+}
+
+/* 下部の店名ロゴを装飾します。 */
+.footer-logo {
+  font-family: Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+/* 下部の著作権表示の余白と大きさを指定します。 */
+.copyright {
+  margin-top: var(--s2);
+  font-size: .75rem;
+}
+
+/* ---- 10. スマホ対応 ---- */
+/* 画面が狭いときの表示を変更する設定です。 */
+@media (max-width: 700px) {
+  /* スマホでは上部と店舗紹介を縦に並べます。 */
+  .hero-inner,
+  .story-inner {
+    grid-template-columns: 1fr;
+  }
+
+  /* 上部の写真の高さと角の形を指定します。 */
+  .hero-photo {
+    height: 260px;
+  }
+
+  /* 商品カードを横に並べます。 */
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* 商品写真の高さや枠を指定します。 */
+  .menu-photo {
+    height: 230px;
+  }
+
+  /* 店舗紹介の写真の高さと角の形を指定します。 */
+  .story-image {
+    height: 250px;
+  }
+
+  /* 店舗情報を項目名と内容の表形式にします。 */
+  .info dl {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* スマホでは店舗情報の内容の下に余白をつけます。 */
+  .info dd {
+    margin-bottom: var(--s2);
+  }
+
+  /* 上部の大見出しの大きさと間隔を指定します。 */
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  /* メニュー項目を横並びにします。 */
+  .site-header nav ul {
+    gap: var(--s1);
+  }
+}
+
+/* ============================================================
+   tamagoiro | Egg Tart Bakery
+   ============================================================ */
+
+/* ---- 1. 色 ---- */
+/* サイト全体で使う色の名前をまとめています。 */
+:root {
+  --base: #faf6ef;
+  --base-sub: #eee3d4;
+  --main: #8b6248;
+  --accent: #c58b55;
+  --text: #40352d;
+}
+
+/* ---- 余白 ---- */
+/* サイト全体で使う余白の大きさをまとめています。 */
+:root {
+  --s1: .5rem;
+  --s2: 1rem;
+  --s3: 1.5rem;
+  --s4: 3rem;
+  --s5: 5rem;
+}
+
+/* ---- 2. 全体 ---- */
+/* ページ全体に共通の基本設定を指定します。 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* ページ全体の文字と背景の見た目を指定します。 */
+body {
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN",
+    "Meiryo", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text);
+  background-color: var(--base);
+}
+
+/* 写真の大きさと切り取り方をそろえます。 */
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---- 3. 中身の幅 ---- */
+/* 表示する内容の横幅と中央位置を指定します。 */
+.inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* 上部ヘッダーと本文、下部の左右に余白をつけます。 */
+.site-header,
+main > section,
+footer {
+  padding-left: var(--s3);
+  padding-right: var(--s3);
+}
+
+/* ---- 4. ヘッダー ---- */
+/* ページ上部のヘッダー部分を装飾します。 */
+.site-header {
+  padding-top: var(--s2);
+  padding-bottom: var(--s2);
+  border-bottom: 1px solid var(--base-sub);
+  background-color: var(--base);
+}
+
+/* ヘッダー内の並び方と間隔を指定します。 */
+.site-header .inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s1) var(--s3);
+}
+
+/* 店名ロゴの文字と見た目を指定します。 */
+.logo {
+  color: var(--main);
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* メニュー項目を横並びにします。 */
+.site-header nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s3);
+}
+
+/* メニューの文字リンクの見た目を指定します。 */
+.site-header nav a {
+  color: var(--text);
+  font-family: Georgia, serif;
+  font-size: .85rem;
+  letter-spacing: .1em;
+  text-decoration: none;
+}
+
+/* マウスをメニュー文字の上に乗せたときの見た目です。 */
+.site-header nav a:hover {
+  color: var(--main);
+  text-decoration: underline;
+}
+
+/* ---- 5. 最初の画面 ---- */
+/* ページ上部の見出し部分全体を装飾します。 */
+.hero {
+  background-color: #eee2d2;
+  color: #503b2c;
+  padding-top: var(--s4);
+  padding-bottom: var(--s4);
+}
+
+/* 上部の文字と写真を横並びに配置します。 */
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--s4);
+}
+
+/* 上部の文字部分に余白をつけます。 */
+.hero-content {
+  padding: var(--s2) 0;
+}
+
+/* 上部の小見出しを装飾します。 */
+.hero-sub {
+  font-family: Georgia, serif;
+  letter-spacing: .18em;
+  font-size: .8rem;
+  margin-bottom: var(--s2);
+  color: #956b4d;
+}
+
+/* 上部の大見出しの大きさと間隔を指定します。 */
+.hero h1 {
+  font-size: 2rem;
+  line-height: 1.5;
+  margin-bottom: var(--s2);
+}
+
+/* 上部の説明文の下に余白をつけます。 */
+.hero p {
+  margin-bottom: var(--s3);
+}
+
+/* 上部の写真の高さと角の形を指定します。 */
+.hero-photo {
+  height: 350px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+/* メニューへ移動するボタンを装飾します。 */
+.btn {
+  display: inline-block;
+  background-color: var(--main);
+  color: #ffffff;
+  font-weight: 700;
+  padding: .8rem 2rem;
+  border-radius: 3px;
+  text-decoration: none;
+  letter-spacing: .1em;
+  transition: background-color .3s, transform .3s;
+}
+
+/* マウスをボタンの上に乗せたときの変化を指定します。 */
+.btn:hover {
+  background-color: #68462f;
+  transform: translateY(-3px);
+}
+
+/* ---- 6. メニュー ---- */
+/* メニュー、紹介、店舗情報の上下に余白をつけます。 */
+.features,
+.story,
+.info {
+  padding-top: var(--s4);
+  padding-bottom: var(--s4);
+}
+
+/* 各部分の小見出しを装飾します。 */
+.section-sub {
+  color: var(--accent);
+  font-family: Georgia, serif;
+  font-size: .8rem;
+  letter-spacing: .2em;
+  margin-bottom: .3rem;
+}
+
+/* 各部分の大見出しをそろえて装飾します。 */
+.features h2,
+.story h2,
+.info h2 {
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  color: var(--main);
+  margin-bottom: var(--s2);
+}
+
+/* メニューの説明文の下に余白をつけます。 */
+.section-intro {
+  margin-bottom: var(--s3);
+}
+
+/* 商品カードを横に並べます。 */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s3);
+}
+
+/* 商品カードの背景と枠を装飾します。 */
+.card {
+  background-color: #fffdf9;
+  border: 1px solid var(--base-sub);
+  border-radius: 4px;
+  padding: var(--s2);
+}
+
+/* 商品写真の高さや枠を指定します。 */
+.menu-photo {
+  height: 190px;
+  overflow: hidden;
+  margin-bottom: var(--s2);
+  background-color: #e7d4bd;
+}
+
+/* 商品写真の動きを滑らかにする設定です。 */
+.menu-photo img {
+  transition: transform .3s;
+}
+
+/* 商品カードにマウスを乗せたとき写真を少し拡大します。 */
+.card:hover .menu-photo img {
+  transform: scale(1.04);
+}
+
+/* 商品名の文字を装飾します。 */
+.card h3 {
+  color: var(--main);
+  margin-bottom: var(--s1);
+  font-family: Georgia, serif;
+}
+
+/* 商品説明の文字を小さくします。 */
+.card p {
+  font-size: .9rem;
+}
+
+/* 商品の値段を右寄せで強調します。 */
+.price {
+  display: block;
+  color: var(--main);
+  font-weight: 700;
+  margin-top: var(--s2);
+  text-align: right;
+}
+
+/* 写真がない商品の仮表示 */
+/* 写真がない商品に共通の中央表示を指定します。 */
+.chocolate-photo,
+.seasonal-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fffaf2;
+  font-family: Georgia, serif;
+  letter-spacing: .15em;
+  font-size: 1.1rem;
+}
+
+/* チョコレート商品の仮の背景色を指定します。 */
+.chocolate-photo {
+  background: linear-gradient(135deg, #9b7157, #503b2c);
+}
+
+/* 季節限定商品の仮の背景色を指定します。 */
+.seasonal-photo {
+  background: linear-gradient(135deg, #d8b28a, #a16d50);
+}
+
+/* ---- 7. お店の紹介 ---- */
+/* 店舗紹介部分の背景色を指定します。 */
+.story {
+  background-color: var(--base-sub);
+}
+
+/* 店舗紹介の写真と文章を横並びに配置します。 */
+.story-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--s4);
+}
+
+/* 店舗紹介の写真の高さと角の形を指定します。 */
+.story-image {
+  height: 330px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+/* 店舗紹介の文章に幅と余白を指定します。 */
+.story-content p {
+  max-width: 36em;
+  margin-bottom: var(--s2);
+}
+
+/* ---- 8. 店舗情報 ---- */
+/* 店舗情報を項目名と内容の表形式にします。 */
+.info dl {
+  display: grid;
+  grid-template-columns: 8em 1fr;
+  gap: var(--s2);
+  margin-top: var(--s3);
+}
+
+/* 店舗情報の項目名を装飾します。 */
+.info dt {
+  font-family: Georgia, serif;
+  font-weight: 700;
+  color: var(--main);
+}
+
+/* ---- 9. フッター ---- */
+/* ページ下部の背景と文字を装飾します。 */
+footer {
+  background-color: #503b2c;
+  color: var(--base);
+  font-size: .85rem;
+  padding-top: var(--s3);
+  padding-bottom: var(--s3);
+  text-align: center;
+}
+
+/* 下部の店名ロゴを装飾します。 */
+.footer-logo {
+  font-family: Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+/* 下部の著作権表示の余白と大きさを指定します。 */
+.copyright {
+  margin-top: var(--s2);
+  font-size: .75rem;
+}
+
+/* ---- 10. スマホ対応 ---- */
+/* 画面が狭いときの表示を変更する設定です。 */
+@media (max-width: 700px) {
+  /* スマホでは上部と店舗紹介を縦に並べます。 */
+  .hero-inner,
+  .story-inner {
+    grid-template-columns: 1fr;
+  }
+
+  /* 上部の写真の高さと角の形を指定します。 */
+  .hero-photo {
+    height: 260px;
+  }
+
+  /* 商品カードを横に並べます。 */
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* 商品写真の高さや枠を指定します。 */
+  .menu-photo {
+    height: 230px;
+  }
+
+  /* 店舗紹介の写真の高さと角の形を指定します。 */
+  .story-image {
+    height: 250px;
+  }
+
+  /* 店舗情報を項目名と内容の表形式にします。 */
+  .info dl {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* スマホでは店舗情報の内容の下に余白をつけます。 */
+  .info dd {
+    margin-bottom: var(--s2);
+  }
+
+  /* 上部の大見出しの大きさと間隔を指定します。 */
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  /* メニュー項目を横並びにします。 */
+  .site-header nav ul {
+    gap: var(--s1);
+  }
+}
+.copyright {
+  margin-top: var(--s4);
+  color: var(--base);
+  font-size: .75rem;
+}
+
+.footer-site-name {
+  font-family: Georgia, serif;
+  color: var(--main);
+}
