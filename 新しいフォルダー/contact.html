@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tamagoiro | Egg Tart Bakery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="inner">
+      <a href="#" class="logo">tamagoiro.</a>
+
+      <nav>
+        <ul>
+          <li><a href="index.html#menu">MENU</a></li>
+          <li><a href="index.html#about">ABOUT</a></li>
+          <li><a href="index.html#info">ACCESS</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contact-main">
+    <section>
+      <h1>お問い合わせ</h1>
+
+      <form method="post">
+        <div>
+          <label for="name">お名前（必須）</label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+        </div>
+
+        <div>
+          <label for="email">メールアドレス（必須）</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+
+        <div>
+          <label for="subject">ご用件</label>
+          <select id="subject" name="subject" autocomplete="off">
+            <option value="reservation">席の予約</option>
+            <option value="question">お店への質問</option>
+            <option value="other">その他</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message">お問い合わせの内容（必須）</label>
+          <textarea id="message" name="message" minlength="10" maxlength="500" autocomplete="off" required></textarea>
+        </div>
+
+        <div>
+          <input type="checkbox" id="consent" name="consent" autocomplete="off" required>
+          <label for="consent">お問い合わせ内容の送信に同意します（必須）</label>
+        </div>
+
+        <button type="submit">送信する</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="inner">
+      <p class="footer-logo">tamagoiro.</p>
+      <p>Freshly baked, little moments of happiness.</p>
+      <p class="copyright">© 2026 tamagoiro</p>
+    </div>
+  </footer>
+
+</body>
+</html>

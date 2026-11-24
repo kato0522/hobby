@@ -832,3 +832,121 @@ footer {
   font-family: Georgia, serif;
   color: var(--main);
 }
+
+/* ---- 11. お問い合わせページ ---- */
+
+/* お問い合わせページの本文全体に余白をつけます。 */
+.contact-main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: var(--s4) var(--s3);
+}
+
+/* お問い合わせページの見出しを装飾します。 */
+.contact-main h1 {
+  color: var(--main);
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  margin-bottom: var(--s3);
+}
+
+/* フォーム全体を白いカードのように見せます。 */
+.contact-main form {
+  background-color: #fffdf9;
+  border: 1px solid var(--base-sub);
+  border-radius: 4px;
+  padding: var(--s4);
+}
+
+/* 各入力欄の間に余白をつけます。 */
+.contact-main form > div {
+  margin-bottom: var(--s3);
+}
+
+/* 入力欄の名前を太字で読みやすくします。 */
+.contact-main label {
+  display: block;
+  color: var(--main);
+  font-weight: 700;
+  margin-bottom: var(--s1);
+}
+
+/* 入力欄と選択欄の見た目をそろえます。 */
+.contact-main input[type="text"],
+.contact-main input[type="email"],
+.contact-main select,
+.contact-main textarea {
+  width: 100%;
+  border: 1px solid var(--base-sub);
+  border-radius: 3px;
+  background-color: #ffffff;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  padding: var(--s2);
+}
+
+/* お問い合わせ本文を十分な高さで入力できるようにします。 */
+.contact-main textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+/* 入力欄を選んだときに枠を目立たせます。 */
+.contact-main input:focus,
+.contact-main select:focus,
+.contact-main textarea:focus {
+  border-color: var(--accent);
+  outline: 2px solid var(--base-sub);
+}
+
+/* チェック欄と同意文を横に並べます。 */
+.contact-main input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-right: var(--s1);
+  vertical-align: middle;
+}
+
+.contact-main input[type="checkbox"] + label {
+  display: inline;
+  font-weight: 400;
+  vertical-align: middle;
+}
+
+/* 送信ボタンの見た目を指定します。 */
+.contact-main button[type="submit"] {
+  display: inline-block;
+  border: 0;
+  border-radius: 3px;
+  background-color: var(--main);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: var(--s2) var(--s4);
+  cursor: pointer;
+  letter-spacing: .05em;
+  transition: background-color .3s, transform .3s;
+}
+
+/* マウスを送信ボタンの上に乗せたときの変化を指定します。 */
+.contact-main button[type="submit"]:hover {
+  background-color: #68462f;
+  transform: translateY(-3px);
+}
+
+/* スマートフォンでは余白とボタン幅を調整します。 */
+@media (max-width: 700px) {
+  .contact-main {
+    padding: var(--s3) var(--s2);
+  }
+
+  .contact-main form {
+    padding: var(--s3) var(--s2);
+  }
+
+  .contact-main button[type="submit"] {
+    width: 100%;
+  }
+}
